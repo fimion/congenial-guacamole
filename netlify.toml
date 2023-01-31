@@ -1,0 +1,12 @@
+[[headers]]
+for = "/photo_proxy/*"
+[headers.value]
+Content-Disposition = "attachement"
+
+[[redirects]]
+from = "/photo_proxy/*"
+to = "https://images.unsplash.com/:splat"
+status = 200
+force = true # COMMENT: ensure that we always redirect
+
+
