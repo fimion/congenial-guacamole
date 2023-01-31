@@ -4,13 +4,10 @@
 import HelloWorld from './components/HelloWorld.vue'
 import SearchResult from "./components/SearchResult.vue"
 import useFetchGet from "./composables/useFetchGet.js"
-import {PuppySearch} from './dev-data/puppySearch.js';
 export default {
   components:{HelloWorld, SearchResult},
   setup(){
     const search = useFetchGet('/.netlify/functions/unsplash');
-    search.response = PuppySearch;
-    search.status = "RESOLVED";
 
     const handleSubmit = ($e)=>{
       const formData = new FormData($e.target);
@@ -41,12 +38,12 @@ export default {
       </li>
     </ul>
   </output>
-  <details>
+<!--  <details>
     <summary>Debug info</summary>
     <pre v-if="search.isResolved">
     {{search.response}}
   </pre>
-  </details>
+  </details>-->
 
 
 </template>
